@@ -1,0 +1,36 @@
+<%- include('partials/header') -%>
+<div class="container">
+  <div class="row mt-5">
+      <div class="col-6">
+          <div>
+              <p><strong>User Name</strong>: <%= user.userName %></p>
+              <p><strong>Email</strong>: <%= user.email %></p>
+              <a href="/logout" class="col-3 btn btn-primary">Logout</a>
+          </div>
+   
+      <div class="col-6">
+        <h1>My Orders</h1>
+        <ul class="row list-unstyled">
+          <% for(var i=0; i<orders.length; i++) {%>
+            <% if(orders[i].completedBy === user.userName) {%>
+              <li class="col-6 justify-content-between mt-5">
+                <div class="">Name: <%= orders[i].name%></div>
+                <div>Style: <%= orders[i].style%></div>
+              </li>
+    
+              <li class="col-6 justify-content-between mt-5">
+                <a href="/order/<%= orders[i]._id%>">
+                  <img class="img-fluid" src="<%= orders[i].image%>">
+                </a>
+              </li>
+            <% } %>
+          <% } %>
+          </ul>
+        <div class="row justify-content-center mt-5">
+          <a class="btn btn-primary" href="/feed">Return to Feed</a>
+        </div>  
+      </div>  
+    </div>
+  </div>
+</div>
+<%- include('partials/footer') -%>

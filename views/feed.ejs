@@ -1,0 +1,59 @@
+<%- include('partials/header') -%>
+  <div class="container">
+    <div class="row justify-content-center mt-5">
+      <h1>Orders: Not Started Yet</h1>
+      <ul class="row list-unstyled">
+        <% for(var i=0; i<orders.length; i++) {%>
+          <% if(orders[i].status === "Not Started Yet") {%>
+            <li class="col-6 justify-content-between mt-5">
+              <div class="">Name: <%= orders[i].name%></div>
+              <div>Style: <%= orders[i].style%></div>
+            </li>
+  
+            <li class="col-6 justify-content-between mt-5">
+              <a href="/order/<%= orders[i]._id%>">
+                <img class="img-fluid" src="<%= orders[i].image%>">
+              </a>
+            </li>
+          <% } %>
+        <% } %>
+        </ul>
+
+        <h1>Orders: In Progress</h1>
+        <ul class="row list-unstyled">
+          <% for(var i=0; i<orders.length; i++) {%>
+            <% if(orders[i].status === "In Progress") {%>
+              <li class="col-6 justify-content-between mt-5">
+                <div class="">Name: <%= orders[i].name%></div>
+                <div>Style: <%= orders[i].style%></div>
+              </li>
+    
+              <li class="col-6 justify-content-between mt-5">
+                <a href="/order/<%= orders[i]._id%>">
+                  <img class="img-fluid" src="<%= orders[i].image%>">
+                </a>
+              </li>
+            <% } %>
+          <% } %>
+          </ul>
+
+          <h1>Orders: Done</h1>
+        <ul class="row list-unstyled">
+          <% for(var i=0; i<orders.length; i++) {%>
+            <% if(orders[i].status === "Done") {%>
+              <li class="col-6 justify-content-between mt-5">
+                <div class="">Name: <%= orders[i].name%></div>
+                <div>Style: <%= orders[i].style%></div>
+              </li>
+    
+              <li class="col-6 justify-content-between mt-5">
+                <a href="/order/<%= orders[i]._id%>">
+                  <img class="img-fluid" src="<%= orders[i].image%>">
+                </a>
+              </li>
+            <% } %>
+          <% } %>
+          </ul>
+    </div>
+  </div>  
+<%- include('partials/footer') -%>

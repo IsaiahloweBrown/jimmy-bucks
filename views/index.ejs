@@ -1,0 +1,49 @@
+<%- include('partials/header-pre-login') -%>
+
+<main class="container">
+  
+          
+    <div class="mt-5">
+        <h2>Add a post</h2>
+        <form action="/order/createOrder" enctype="multipart/form-data" method="POST">
+          <div class="mb-3">
+              <label for="name" class="form-label">Title</label>
+              <input type="text" class="form-control" id="name" name="name">
+          </div>
+          <div class="mb-3">
+            <label for="imgUpload" class="form-label">Image</label>
+            <input type="file" class="form-control" id="imageUpload" name="file">
+          </div>
+          <div class="mb-3">
+            <label for="style" class="form-label">Caption</label>
+            <select class="form-control" id="style" name="style">
+              <option value="Peanut Chocalate">Peanut Chocalate</option>
+              <option value="Strawberry Opportunity">Strawberry Opportunity</option>
+              <option value="Sweet Stuff Pineapple">Sweet Stuff Pineapple</option>
+            </select>
+          </div>
+          <div class="mb-3">
+            <label for="size" class="form-label">Caption</label>
+            <select class="form-control" id="size" name="size">
+              <option value="Small">Small </option>
+              <option value="Medium">Medium</option>
+              <option value="Large">Large</option>
+            </select>
+          </div>
+          <div class="mb-3">
+            <label for="status" class="form-label">Caption</label>
+            <select class="form-control" id="status" name="status">
+              <option value="Not Started Yet">Not Started Yet</option>
+              <option value="In Progress">In Progress</option>
+              <option value="Done">Done</option>
+          
+            </select>
+          </div>
+          <button type="submit" class="btn btn-primary" value="Upload">Submit</button>
+        </form>
+      </div>
+  </div>
+</main>
+    
+
+<%- include('partials/footer') -%>
