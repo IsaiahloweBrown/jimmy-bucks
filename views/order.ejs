@@ -13,7 +13,7 @@
           <button class="btn btn-primary fa fa-heart" type="submit"></button>
         </form>
         <h3 class="col-3">Completed By: <%= order.completedBy %></h3>
-        <%if(order.user == user.id){ %>
+        <%if(user.id == user.id){ %>
         <form
           action="/order/deleteOrder/<%= order.id %>?_method=DELETE"
           method="POST"

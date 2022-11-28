@@ -55,6 +55,8 @@ module.exports = {
         { _id: req.params.id },
         {
           $set: { completedBy: req.user.userName },
+          $set: { status: "Done" },
+          //add status: completed
         }
       );
       console.log("Likes +1");
